@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohit Sharma | Portfolio</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1120;
+      color: #f1f5f9;
+      line-height: 1.7;
+    }
+    header, section, footer {
+      max-width: 1000px;
+      margin: auto;
+      padding: 28px 22px;
+    }
+    header { border-bottom: 1px solid #26334b; }
+    nav a {
+      color: #60a5fa;
+      margin-right: 18px;
+      text-decoration: none;
+    }
+    h1 { font-size: 42px; margin-bottom: 8px; }
+    h2 { color: #60a5fa; }
+    .hero { padding-top: 65px; padding-bottom: 55px; }
+    .muted { color: #cbd5e1; }
+    .skills span {
+      display: inline-block;
+      background: #172943;
+      border: 1px solid #334b6d;
+      padding: 6px 13px;
+      margin: 5px;
+      border-radius: 20px;
+    }
+    .project {
+      background: #111c30;
+      border: 1px solid #263752;
+      border-radius: 12px;
+      padding: 18px;
+      margin: 12px 0;
+    }
+    .button {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 10px 17px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin: 8px 8px 8px 0;
+    }
+    a { color: #60a5fa; }
+    footer { border-top: 1px solid #26334b; }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>Mohit Sharma</strong>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <p style="color:#60a5fa">Hello, welcome to my portfolio!</p>
+    <h1>I'm Mohit Sharma</h1>
+    <h2>Aspiring Software Developer</h2>
+    <p class="muted">
+      I am developing my technical skills and building projects.
+      I enjoy learning new tools and solving real-world problems.
+    </p>
+    <a class="button" href="#projects">View My Projects</a>
+    <a class="button"
+       href="https://github.com/mohitsharma091111-coder/Mohit-/blob/main/resume%20(1).pdf">
+       View My Resume
+    </a>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p class="muted">
+      I am an aspiring developer interested in technology,
+      problem-solving, project support, and data analysis.
+      I am continuously learning and improving my skills.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>Microsoft Excel</span>
+      <span>Data Analysis</span>
+      <span>Git</span>
+      <span>GitHub</span>
+      <span>Documentation</span>
+      <span>Reporting</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="project">
+      <h3>Personal Portfolio</h3>
+      <p class="muted">
+        A personal website to showcase my skills and experience.
+      </p>
+      <a href="https://github.com/mohitsharma091111-coder">
+        View my GitHub
+      </a>
+    </div>
+    <div class="project">
+      <h3>More Projects Coming Soon</h3>
+      <p class="muted">
+        I will add more projects as I develop new skills.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>GitHub:
+      <a href="https://github.com/mohitsharma091111-coder">
+        Visit my profile
+      </a>
+    </p>
+    <p class="muted">
+      Add your professional email or LinkedIn link here.
+    </p>
+  </section>
+
+  <footer>
+    <p class="muted">© 2026 Mohit Sharma | Portfolio</p>
+  </footer>
+</body>
+</html>
