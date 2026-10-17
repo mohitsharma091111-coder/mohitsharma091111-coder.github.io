@@ -4,139 +4,673 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohit Sharma | Portfolio</title>
+  <meta name="description" content="Mohit Sharma's professional portfolio in business, finance, customer support, sales, and data analysis.">
+  <title>Mohit Sharma | Professional Portfolio</title>
+
   <style>
-    * { box-sizing: border-box; }
-    body {
+    :root {
+      --navy: #17365d;
+      --blue: #2864a5;
+      --light-blue: #edf4fc;
+      --text: #263449;
+      --muted: #637187;
+      --border: #e2e8f0;
+      --white: #ffffff;
+      --background: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b1120;
-      color: #f1f5f9;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--text);
       line-height: 1.7;
     }
-    header, section, footer {
-      max-width: 1000px;
-      margin: auto;
-      padding: 28px 22px;
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
     }
-    header { border-bottom: 1px solid #26334b; }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1080px, 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+
     nav a {
-      color: #60a5fa;
-      margin-right: 18px;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 90px 0 80px;
+      background: linear-gradient(135deg, #f1f6fd, #ffffff 75%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 0.83rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      color: var(--navy);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .intro {
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 26px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 19px;
+      border-radius: 7px;
+      font-weight: 700;
+      border: 1px solid var(--blue);
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--navy);
+      color: var(--white);
       text-decoration: none;
     }
-    h1 { font-size: 42px; margin-bottom: 8px; }
-    h2 { color: #60a5fa; }
-    .hero { padding-top: 65px; padding-bottom: 55px; }
-    .muted { color: #cbd5e1; }
-    .skills span {
-      display: inline-block;
-      background: #172943;
-      border: 1px solid #334b6d;
-      padding: 6px 13px;
-      margin: 5px;
-      border-radius: 20px;
+
+    .btn-outline {
+      color: var(--blue);
+      background: var(--white);
     }
-    .project {
-      background: #111c30;
-      border: 1px solid #263752;
+
+    .btn-outline:hover {
+      background: var(--light-blue);
+      text-decoration: none;
+    }
+
+    .profile-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 12px 35px rgba(23, 54, 93, 0.07);
+    }
+
+    .initials {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--light-blue);
+      color: var(--navy);
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .profile-card h3 {
+      color: var(--navy);
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .profile-card ul {
+      list-style: none;
+      margin-top: 18px;
+    }
+
+    .profile-card li {
+      border-top: 1px solid var(--border);
+      padding: 9px 0;
+      font-size: 0.93rem;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-alt {
+      background: var(--background);
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.35rem);
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 18px;
-      margin: 12px 0;
+      padding: 24px;
     }
-    .button {
+
+    .card h3 {
+      color: var(--navy);
+      font-size: 1.12rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .card ul {
+      padding-left: 20px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .about-copy {
+      max-width: 850px;
+      color: var(--muted);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
       display: inline-block;
-      background: #2563eb;
-      color: white;
-      padding: 10px 17px;
-      border-radius: 8px;
-      text-decoration: none;
-      margin: 8px 8px 8px 0;
+      background: var(--light-blue);
+      color: var(--navy);
+      border: 1px solid #dbe7f7;
+      padding: 7px 13px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
     }
-    a { color: #60a5fa; }
-    footer { border-top: 1px solid #26334b; }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      border-left: 3px solid #b8d0ee;
+      padding: 5px 0 5px 22px;
+    }
+
+    .timeline-item h3 {
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+    }
+
+    .note {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-top: 18px;
+    }
+
+    .contact-panel {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 38px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .contact-panel h2 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .contact-panel p {
+      color: #dbe6f4;
+    }
+
+    .contact-panel .btn {
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--white);
+      white-space: nowrap;
+    }
+
+    footer {
+      padding: 25px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 760px) {
+      .navbar {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      .hero {
+        padding: 58px 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .contact-panel {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 27px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <header>
-    <strong>Mohit Sharma</strong>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="container navbar">
+      <a class="brand" href="#home">Mohit Sharma</a>
+
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero">
-    <p style="color:#60a5fa">Hello, welcome to my portfolio!</p>
-    <h1>I'm Mohit Sharma</h1>
-    <h2>Aspiring Software Developer</h2>
-    <p class="muted">
-      I am developing my technical skills and building projects.
-      I enjoy learning new tools and solving real-world problems.
-    </p>
-    <a class="button" href="#projects">View My Projects</a>
-    <a class="button"
-       href="https://github.com/mohitsharma091111-coder/Mohit-/blob/main/resume%20(1).pdf">
-       View My Resume
-    </a>
-  </section>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Welcome to my portfolio</p>
+          <h1>Mohit Sharma</h1>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p class="muted">
-      I am an aspiring developer interested in technology,
-      problem-solving, project support, and data analysis.
-      I am continuously learning and improving my skills.
-    </p>
-  </section>
+          <h2>
+            Business &amp; Finance | Customer Support &amp; Sales |
+            Aspiring Data Analyst
+          </h2>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span>Microsoft Excel</span>
-      <span>Data Analysis</span>
-      <span>Git</span>
-      <span>GitHub</span>
-      <span>Documentation</span>
-      <span>Reporting</span>
-    </div>
-  </section>
+          <p class="intro">
+            MBA graduate based in Latvia with experience in customer support,
+            accounting, and sales. I am interested in business operations,
+            financial reporting, customer experience, and developing my
+            skills in data and business analysis.
+          </p>
 
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="project">
-      <h3>Personal Portfolio</h3>
-      <p class="muted">
-        A personal website to showcase my skills and experience.
-      </p>
-      <a href="https://github.com/mohitsharma091111-coder">
-        View my GitHub
-      </a>
-    </div>
-    <div class="project">
-      <h3>More Projects Coming Soon</h3>
-      <p class="muted">
-        I will add more projects as I develop new skills.
-      </p>
-    </div>
-  </section>
+          <div class="buttons">
+            <a class="btn btn-primary"
+               href="Mohit-Sharma-CV.pdf"
+               target="_blank"
+               rel="noopener">
+              Download CV ↓
+            </a>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>GitHub:
-      <a href="https://github.com/mohitsharma091111-coder">
-        Visit my profile
-      </a>
-    </p>
-    <p class="muted">
-      Add your professional email or LinkedIn link here.
-    </p>
-  </section>
+            <a class="btn btn-outline"
+               href="https://www.linkedin.com/in/mohit-sharma-072a461a4/"
+               target="_blank"
+               rel="noopener noreferrer">
+              LinkedIn ↗
+            </a>
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <div class="initials" aria-hidden="true">MS</div>
+          <h3>Professional Profile</h3>
+          <p>MBA Graduate | Business Professional</p>
+          <ul>
+            <li>🎓 MBA graduate in Latvia</li>
+            <li>💼 Customer support, accounting and sales experience</li>
+            <li>📊 Learning data and business analysis</li>
+            <li>🌍 International education and work exposure</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">About me</p>
+          <h2>Combining business knowledge with practical experience</h2>
+        </div>
+
+        <div class="about-copy">
+          <p>
+            I am an MBA graduate with experience across customer service,
+            accounting, and sales. These roles have helped me develop
+            communication, problem-solving, customer relationship, and
+            business-support skills.
+          </p>
+          <br>
+          <p>
+            I am now expanding my knowledge of data and business analysis.
+            My goal is to use business understanding, structured thinking,
+            and data-driven insights to help organisations improve their
+            operations and make informed decisions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">What I bring</p>
+          <h2>Skills and areas of interest</h2>
+          <p>
+            My current strengths and the areas I am developing for my next role.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Business, Accounting &amp; Finance</h3>
+            <p>Business knowledge and financial-support experience.</p>
+            <ul>
+              <li>Accounting support</li>
+              <li>Financial information and reporting</li>
+              <li>Business operations</li>
+              <li>Attention to detail</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Customer Support &amp; Sales</h3>
+            <p>Customer communication and relationship management.</p>
+            <ul>
+              <li>Customer service</li>
+              <li>Issue resolution</li>
+              <li>Sales communication</li>
+              <li>Customer relationship support</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Data &amp; Business Analysis</h3>
+            <p>An area of active learning and professional development.</p>
+            <ul>
+              <li>Excel and data handling — add your actual level</li>
+              <li>Business reporting — developing</li>
+              <li>Data visualisation — learning</li>
+              <li>Analytical problem-solving</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="note">
+          Please edit this section to reflect the tools and skills you can
+          confidently demonstrate. Add specific software such as Excel,
+          Power BI, or SQL only when you have the relevant skills.
+        </p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">My background</p>
+          <h2>Experience &amp; education</h2>
+          <p>A foundation in business education and international work experience.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <h3>Sales Agent</h3>
+            <p><strong>Employer:</strong> Add your official employer name</p>
+            <p><strong>Dates:</strong> Add your employment dates</p>
+            <p>
+              Add two or three accurate points describing your sales,
+              customer communication, and daily responsibilities.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <h3>Customer Support Representative</h3>
+            <p><strong>Employer:</strong> Amazon or the correct employing entity</p>
+            <p><strong>Duration:</strong> Approximately one year — confirm dates</p>
+            <p>
+              Describe your actual customer support responsibilities,
+              communication channels, and issue-resolution experience.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <h3>Accounting Experience</h3>
+            <p><strong>Employer:</strong> Add employer name</p>
+            <p><strong>Duration:</strong> Approximately one year — confirm dates</p>
+            <p>
+              Add your actual accounting tasks, financial records,
+              reporting responsibilities, and software used.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <h3>MBA Graduate</h3>
+            <p><strong>Institution:</strong> Add your university name</p>
+            <p><strong>Location:</strong> Latvia</p>
+            <p><strong>Graduation:</strong> Add your official graduation year</p>
+            <p>
+              Add relevant coursework, your thesis topic, or academic
+              achievements if you wish.
+            </p>
+          </article>
+        </div>
+
+        <p class="note">
+          Review all employer names, dates, and descriptions before publishing.
+          Remove any section that does not match your actual history.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-alt" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Practical learning</p>
+          <h2>Projects</h2>
+          <p>
+            Use this section to demonstrate your skills with real work,
+            coursework, or clearly labelled practice projects.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Excel Sales Dashboard</h3>
+            <p>
+              Practice project idea: analyse sample sales data, compare
+              monthly performance, and display key metrics in charts.
+            </p>
+            <p class="note">
+              Status: Not added yet. Link your completed project here.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Financial Analysis</h3>
+            <p>
+              Practice project idea: analyse a company's published financial
+              statements and calculate selected financial ratios.
+            </p>
+            <p class="note">
+              Status: Not added yet. Link your completed project here.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Customer Service Insights</h3>
+            <p>
+              Practice project idea: use sample support data to study
+              common issues, response times, and customer satisfaction.
+            </p>
+            <p class="note">
+              Status: Not added yet. Link your completed project here.
+            </p>
+          </article>
+        </div>
+
+        <p class="note">
+          These are project suggestions, not claims of completed work.
+          Replace them with completed projects or clearly label them as
+          practice projects when you publish your results.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <div>
+            <h2>Let's connect</h2>
+            <p>
+              I welcome opportunities in business, finance, customer support,
+              sales, and entry-level business analysis.
+            </p>
+          </div>
+
+          <a class="btn"
+             href="https://www.linkedin.com/in/mohit-sharma-072a461a4/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Connect on LinkedIn ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p class="muted">© 2026 Mohit Sharma | Portfolio</p>
+    <div class="container">
+      <p>© <span id="year"></span> Mohit Sharma. All rights reserved.</p>
+      <p>Built with HTML and CSS on GitHub Pages.</p>
+    </div>
   </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 </body>
 </html>
